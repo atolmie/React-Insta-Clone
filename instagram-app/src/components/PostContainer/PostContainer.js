@@ -1,5 +1,6 @@
 import React from 'react';
 import CommentSection from '../CommentSection/CommentSection';
+import PropTypes from 'prop-types';
 
 class PostContainer extends React.Component {
     constructor(props) {
@@ -11,14 +12,15 @@ class PostContainer extends React.Component {
     render() {
         return (
             <div>
-                
                 <strong>{this.props.post.username}</strong>
                 <CommentSection comments={this.props.post.comments}/>
-                
-                
             </div>
         )
     }
 }
+
+PostContainer.propTypes = {
+    post: PropTypes.object
+};
 
 export default PostContainer;

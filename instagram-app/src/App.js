@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import PropTypes from 'prop-types';
 import dummyData from './dummy-data';
@@ -9,7 +8,7 @@ function App() {
   return (
     <div className="App">
       {dummyData.map(post => {
-        return <PostContainer post={post}/>
+        return <PostContainer key={post.id} post={post} />
       })}
     </div>
   );
