@@ -11,10 +11,11 @@ class PostContainer extends React.Component {
     render() {
         return (
             <div>
+                
                 <strong>{this.props.post.username}</strong>
-                {this.props.post.comments.map(comment => {
-                    return <CommentSection comment={comment}/>
-                })}
+                <CommentSection comments={this.props.post.comments}/>
+                
+                
             </div>
         )
     }
