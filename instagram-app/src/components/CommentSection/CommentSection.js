@@ -11,7 +11,7 @@ class CommentSection extends React.Component {
     render() {
         return (
             <div>
-                <input type="text" value={this.state.value} onChange={e => console.warn(e.target.value)}/>
+                <input type="text" value={this.state.value} onChange={e => console.warn(e.t)}/>
                 {this.props.comments.map(comment => {
                     return <Comment key={comment.id} comment={comment} />
                 })}
@@ -27,3 +27,4 @@ CommentSection.propTypes = {
 };
 
 export default CommentSection;
+
