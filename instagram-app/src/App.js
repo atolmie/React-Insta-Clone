@@ -24,6 +24,7 @@ class App extends React.Component {
         {this.state.data.map(post => {
           return <PostContainer key={post.id} post={post} />
         })}
+        { /* ^ send the dummyData to Post Container, which renders the images */ }
       </div>
     );
   }

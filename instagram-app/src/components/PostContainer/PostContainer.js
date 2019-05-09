@@ -13,7 +13,9 @@ class PostContainer extends React.Component {
     render() {
         return (
             <div>
+                {console.log('PostContainer says:', this.props.post.imageUrl)}
                 <img src={this.props.post.imageUrl} />
+                {/* ^ this returns the images from props */}
                 <strong>{this.props.post.username}</strong>
                 <CommentSection comments={this.props.post.comments}/>
             </div>
