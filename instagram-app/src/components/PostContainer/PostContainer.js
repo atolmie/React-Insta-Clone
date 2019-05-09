@@ -7,17 +7,28 @@ class PostContainer extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            likes: 0
 
         }
     }
+
+    incrementLikes = () => {
+        this.setState({ likes: this.state.likes + 1 })
+    }
+    
     render() {
+        const hasLikes = !!this.state.likes;
+        const iconClasses = hasLikes ? "fas fa-heart" : "far fa-heart";
+
         return (
             <div>
-                {console.log('PostContainer says:', this.props.post.imageUrl)}
                 <img src={this.props.post.imageUrl} />
-                {/* ^ this returns the images from props */}
+                <span>
+                    <i className={iconClasses} onClick={this.incrementLikes}></i>
+                    {this.state.likes}
+                </span>
                 <strong>{this.props.post.username}</strong>
-                <CommentSection comments={this.props.post.comments}/>
+                <CommentSection comments={this.props.post.comments} />
             </div>
         )
     }
